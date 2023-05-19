@@ -9,6 +9,7 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 import MapScreen from './src/features/restaurants/screens/map.screen';
 import SettingsScreen from './src/features/restaurants/screens/setting.screen';
 import { RestaurantContextProvider } from './src/services/restaurants/restaurants.context';
+import { LocationContextProvider } from './src/services/location/location.context';
 
 const navigator = createMaterialBottomTabNavigator({
   Restaurants: RestaurantsScreen,
@@ -42,9 +43,11 @@ export default () => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantContextProvider>
-          <App />
-        </RestaurantContextProvider>
+        <LocationContextProvider>
+          <RestaurantContextProvider>
+            <App />
+          </RestaurantContextProvider>
+        </LocationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

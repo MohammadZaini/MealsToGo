@@ -21,7 +21,7 @@ export const RestaurantContextProvider = ({ children }) => {
                     setIsLoading(false)
                     setError(err)
                 })
-        }, 2000)
+        }, 2000);
     };
 
     useEffect(() => {
