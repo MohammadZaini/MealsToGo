@@ -11,7 +11,7 @@ const SettingsScreen = () => {
 SettingsScreen.navigationOptions = () => {
     return {
         tabBarIcon: ({ focused }) => (
-            <Ionicons name="ios-settings-outline" size={24} color={focused ? 'tomato' : ''} />
+            <Ionicons name="md-settings" size={24} color={focused ? 'tomato' : 'grey'} />
         )
     };
 };

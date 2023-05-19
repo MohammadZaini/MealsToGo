@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { Feather } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
 const MapScreen = () => {
     return <View>
@@ -11,7 +11,7 @@ const MapScreen = () => {
 MapScreen.navigationOptions = () => {
     return {
         tabBarIcon: ({ focused }) => (
-            <Feather name="map" size={24} color={focused ? 'tomato' : ''} />
+            <FontAwesome name="map" size={24} color={focused ? 'tomato' : 'grey'} />
         )
     }
 };

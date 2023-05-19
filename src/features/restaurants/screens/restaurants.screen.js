@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Searchbar, ActivityIndicator, Colors } from "react-native-paper";
+import { ActivityIndicator, Colors } from "react-native-paper";
 import { FlatList } from "react-native";
 import RestaurantInfoCard from "../components/restaurant-info-card.component";
 import styled from "styled-components";
@@ -7,10 +7,7 @@ import { Spacer } from "../../../components/spacer/spacer";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Ionicons } from '@expo/vector-icons';
 import { RestaurantContext } from "../../../services/restaurants/restaurants.context";
-
-const SearchContainer = styled.View`
-    padding: 16px;
-`;
+import { Search } from "../components/search.component";
 
 const RestaurantList = styled(FlatList).attrs({
     contentContainerStyle: {
@@ -37,11 +34,7 @@ const RestaurantsScreen = () => {
                     <Loading size={50} animating={true} color={Colors.blue300} />
                 </LoadingContainer>
             )}
-            <SearchContainer>
-                <Searchbar
-                    placeholder="Search for any restaurant"
-                />
-            </SearchContainer>
+            <Search />
             <RestaurantList
                 data={restaurants}
                 renderItem={({ item }) => {
@@ -59,7 +52,7 @@ const RestaurantsScreen = () => {
 RestaurantsScreen.navigationOptions = () => {
     return {
         tabBarIcon: ({ focused }) => (
-            <Ionicons name="restaurant" size={24} color={focused ? 'tomato' : ''} />
+            <Ionicons name="restaurant" size={24} color={focused ? 'tomato' : 'grey'} />
         )
     }
 };
