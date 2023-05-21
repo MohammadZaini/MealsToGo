@@ -1,34 +1,21 @@
-import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
-import RestaurantsScreen from './src/features/restaurants/screens/restaurants.screen';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './src/infrastructure/theme'
-import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/oswald';
-import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
-import { createAppContainer } from 'react-navigation';
-import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
-import MapScreen from './src/features/restaurants/screens/map.screen';
-import SettingsScreen from './src/features/restaurants/screens/setting.screen';
-import { RestaurantContextProvider } from './src/services/restaurants/restaurants.context';
-import { LocationContextProvider } from './src/services/location/location.context';
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+import React from "react";
+import { ThemeProvider } from "styled-components";
 
-const navigator = createMaterialBottomTabNavigator({
-  Restaurants: RestaurantsScreen,
-  Map: MapScreen,
-  Settings: SettingsScreen,
+import {
+  useFonts as useOswald,
+  Oswald_400Regular,
+} from "@expo-google-fonts/oswald";
+import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 
-}, {
-  barStyle: {
-    backgroundColor: 'white'
-  }
-}, {
-  initialRouteName: 'Restaurants',
-})
+import { theme } from "./src/infrastructure/theme"
+import { RestaurantContextProvider } from "./src/services/restaurants/restaurants.context";
+import { LocationContextProvider } from "./src/services/location/location.context";
 
-const App = createAppContainer(navigator)
+import { Navigation } from "./src/infrastructure/navigation";
 
-export default () => {
-
-  const [oswaldsLoaded] = useOswald({
+export default App = () => {
+  const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
 
@@ -36,7 +23,7 @@ export default () => {
     Lato_400Regular,
   });
 
-  if (!oswaldsLoaded || !latoLoaded) {
+  if (!oswaldLoaded || !latoLoaded) {
     return null;
   }
 
@@ -45,7 +32,7 @@ export default () => {
       <ThemeProvider theme={theme}>
         <LocationContextProvider>
           <RestaurantContextProvider>
-            <App />
+            <Navigation />
           </RestaurantContextProvider>
         </LocationContextProvider>
       </ThemeProvider>

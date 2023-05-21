@@ -14,7 +14,6 @@ import {
     Icon,
     Address,
 } from "./restaurant-info-card.styles";
-import { Entypo } from '@expo/vector-icons';
 
 const RestaurantInfoCard = ({ restaurant = {} }) => {
 
@@ -28,6 +27,7 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
         isOpenNow = true,
         rating = 4,
         isClosedTemporarily = "yes",
+        placeId,
     } = restaurant;
 
     const ratingArray = Array.from(new Array(Math.floor(rating)))
@@ -39,8 +39,12 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
                 <Text>{name}</Text>
                 <Section>
                     <Rating>
-                        {ratingArray.map((_, key = 1) => (
-                            <SvgXml xml={star} height={20} width={20} key={(key + 1)} />
+                        {ratingArray.map((_, i) => (
+                            <SvgXml
+                                key={(`star-${placeId}-${i}`)}
+                                xml={star}
+                                height={20}
+                                width={20} />
                         ))}
                     </Rating>
                     <SectionEnd>
@@ -51,7 +55,7 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
                         )}
 
                         <Spacer position="left" size="small" >
-                            {/* {isOpenNow && <SvgXml xml={open} width={20} height={20} />} */}
+                            {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
                         </Spacer>
                         <Spacer position="left" size="large" >
                             <Icon source={{ uri: icon }} />
