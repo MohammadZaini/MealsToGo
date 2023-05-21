@@ -15,7 +15,7 @@ import {
     Address,
 } from "./restaurant-info-card.styles";
 
-const RestaurantInfoCard = ({ restaurant = {} }) => {
+export const RestaurantInfoCard = ({ restaurant = {} }) => {
 
     const {
         name = "Some Restaurant",
@@ -67,5 +67,3 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
         </RestaurantCard>
     );
 };
-
-export default RestaurantInfoCard;
