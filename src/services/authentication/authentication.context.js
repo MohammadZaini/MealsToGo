@@ -15,7 +15,7 @@ export const AuthenticationContextProvider = ({ children }) => {
             setUser(usr);
             setIsLoading(false);
         } else {
-            setIsLoading(false);
+            // setIsLoading(false);
         }
     });
 

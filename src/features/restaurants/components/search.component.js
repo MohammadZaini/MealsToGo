@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import styled from "styled-components/native";
+import styled from "styled-components";
 import { Searchbar } from "react-native-paper";
 
 import { LocationContext } from "../../../services/location/location.context";
