@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { RestaurantNavigator } from "./restaurants.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
-import { SettingsScreen } from "../../features/settings/screens/settings.screen";
 import { RestaurantContextProvider } from "../../services/restaurants/restaurants.context";
 import { LocationContextProvider } from "../../services/location/location.context";
 import { FavouritesContextProvider } from "../../services/favourites/favourites.context";
@@ -15,8 +14,6 @@ const TAB_ICON = {
     Map: "md-map",
     Settings: "md-settings",
 };
-
-
 
 const createScreenOptions = ({ route }) => {
     const iconName = TAB_ICON[route.name];

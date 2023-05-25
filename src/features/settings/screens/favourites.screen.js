@@ -6,6 +6,7 @@ import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Spacer } from "../../../components/spacer/spacer";
 import styled from "styled-components";
 import { RestaurantList } from "../../restaurants/components/restaurant-list.styles";
+import { Text } from "../../../components/typography/text.component";
 
 export const FavouritesScreen = ({ navigation }) => {
     const { favourites } = useContext(FavouritesContext);
