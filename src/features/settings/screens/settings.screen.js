@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import styled from "styled-components";
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer";
 import { List, Avatar } from "react-native-paper";
