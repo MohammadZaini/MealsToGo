@@ -28,7 +28,8 @@ export const AuthenticationContextProvider = ({ children }) => {
             })
             .catch((e) => {
                 setIsLoading(false);
-                setError(e.toString());
+                const errorCode = e.code;
+                setError(errorCode.slice(5));
             });
     };
 
@@ -44,7 +45,8 @@ export const AuthenticationContextProvider = ({ children }) => {
             })
             .catch((e) => {
                 setIsLoading(false);
-                setError(e.toString());
+                const errorCode = e.code;
+                setError(errorCode.slice(5));
             });
     };
 

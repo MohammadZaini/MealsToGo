@@ -4,6 +4,7 @@ import { Spacer } from "../../../components/spacer/spacer";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { Text } from "../../../components/typography/text.component";
 import { ActivityIndicator, Colors } from "react-native-paper";
+import { useFocusEffect } from "@react-navigation/native";
 
 export const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState("");
