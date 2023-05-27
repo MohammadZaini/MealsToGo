@@ -35,14 +35,6 @@ export const SettingsScreen = ({ navigation }) => {
         <SafeArea>
             <AvatarContainer>
                 <TouchableOpacity onPress={() => navigation.navigate('Camera')} >
-                    {/* {!photo && (
-                        <Avatar.Icon size={180} icon="human" color="white" style={{ backgroundColor: 'tomato' }} />
-                    )}
-                    {
-                        photo && (
-                            <Avatar.Image size={180} source={{ uri: photo }} color="white" style={{ backgroundColor: 'tomato' }} />
-                        )
-                    } */}
                     {photo
                         ? <Avatar.Image size={180} source={{ uri: photo }} color="white" style={{ backgroundColor: 'tomato' }} />
                         : <Avatar.Icon size={180} icon="human" color="white" style={{ backgroundColor: 'tomato' }} />
