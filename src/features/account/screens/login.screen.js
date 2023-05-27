@@ -18,7 +18,6 @@ export const LoginScreen = ({ navigation }) => {
                     value={email}
                     onChangeText={setEmail}
                     label="E-mail"
-                    activeUnderlineColor="blue"
                     textContentType="emailAddress"
                     keyboardType="email-address"
                     autoCapitalize="none"
@@ -30,7 +29,6 @@ export const LoginScreen = ({ navigation }) => {
                     label="Password"
                     textContentType="password"
                     secureTextEntry
-                    activeUnderlineColor="blue"
                 />
                 <Spacer size="large" />
                 {!isLoading ?
